@@ -1,8 +1,16 @@
 " ==================== Auto load for first time uses ====================
-if empty(glob($HOME.'/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+  if empty(glob('C:\\Users\\smile\\AppData\\Local\\nvim\\autoload\\plug.vim'))
+    silent !curl -fLo C:\\Users\\smile\\AppData\\Local\\nvim\\autoload\\plug.vim --create-dirs
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+else
+  if empty(glob($HOME.'/.config/nvim/autoload/plug.vim'))
+  	silent !curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs
+  				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
 endif
 
 
@@ -78,6 +86,10 @@ noremap tn :+tabnext<CR> " 移动到下一个标签
 noremap tmp :-tabmove<CR> " 当前标签前移
 noremap tmn :+tabmove<CR> " 当前标签后移
 
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+else
+  let g:python3_host_prog = expand('/usr/bin/python3.7')
+endif
 
 " ==================== Install Plugins with Vim-Plug ====================
 call plug#begin('$HOME/.config/nvim/plugged')
@@ -227,4 +239,8 @@ nmap <silent> gd <Plug>(coc-definition)
 let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
 let g:UltiSnipsJumpBackwardTrgger="<C-tab>"
-let g:UltiSnipsSnippetDirectories=['/home/ubuntu/.config/nvim/plugged/ultisnips/']
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+   let g:UltiSnipsSnippetDirectories=['C:\\Users\\smile\\AppData\\Local\\nvim\\plugged\\ultisnips\\']
+else
+  let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/plugged/ultisnips/']
+endif
