@@ -32,3 +32,9 @@ echo -e "\033[32m[INFO]Install Nodejs 16.X\033[0m"
 curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh
 sudo bash /tmp/nodesource_setup.sh
 sudo apt install nodejs
+
+# == auto add hosts ==
+sudo bash -c 'echo "199.232.68.133 raw.githubusercontent.com" >> /etc/hosts'
+sudo bash -c 'echo "199.232.68.133 user-images.githubusercontent.com" >> /etc/hosts'
+sudo bash -c 'echo "199.232.68.133 avatars2.githubusercontent.com" >> /etc/hosts'
+sudo bash -c 'echo "199.232.68.133 avatars1.githubusercontent.com" >> /etc/hosts'
