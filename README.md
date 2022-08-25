@@ -14,7 +14,7 @@
 由于国内的DNS污染问题，自动安装neovim插件的插件下载失败，这里需要在hosts文件中添加如下DNS:
 
 - Windows的hosts文件地址：C:\Windows\System32\drivers\etc
-- Linux可以使用SwitchHosts快速配置
+- Linux下plugins_depend.sh中已添加自动化配置hosts
 
 ```text
 199.232.68.133 raw.githubusercontent.com
