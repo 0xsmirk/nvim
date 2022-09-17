@@ -1,7 +1,8 @@
 " ==================== Auto load for first time uses ====================
+let windows_user = "22782"
 if(has("win32") || has("win64") || has("win95") || has("win16"))
-  if empty(glob('C:\\Users\\smile\\AppData\\Local\\nvim\\autoload\\plug.vim'))
-    silent !curl -fLo C:\\Users\\smile\\AppData\\Local\\nvim\\autoload\\plug.vim --create-dirs
+  if empty(glob('C:\\Users\\'+windows_user+'\\AppData\\Local\\nvim\\autoload\\plug.vim'))
+    silent !curl -fLo C:\\Users\\'+windows_user+'\\AppData\\Local\\nvim\\autoload\\plug.vim --create-dirs
           \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
@@ -240,7 +241,7 @@ let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
 let g:UltiSnipsJumpBackwardTrgger="<C-tab>"
 if(has("win32") || has("win64") || has("win95") || has("win16"))
-   let g:UltiSnipsSnippetDirectories=['C:\\Users\\smile\\AppData\\Local\\nvim\\plugged\\ultisnips\\']
+   let g:UltiSnipsSnippetDirectories=['C:\\Users\\'+windows_user+'\\AppData\\Local\\nvim\\plugged\\ultisnips\\']
 else
   let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/plugged/ultisnips/']
 endif
