@@ -1,21 +1,26 @@
 # NEOVIM配置
 
+> 基于AstroNvim的项目重构自己的相关需求
+> 国内建议使用全局代理
+
 ## 0x01.环境依赖
 
-- windows&Linux平台依赖:
+- windows&Linux平台相关依赖:
     - neovim >=0.8.0
-    - python >=3.7.0
-    - nodejs >=16.x
-- python依赖：
-    -  pynvim: pip3 install pynvim
+    - lua
+    - gcc
+    - [?] python >=3.7.0
+    - [?] nodejs >=16.x
 
 ## 0x02.安装
 
-windows下安装的步骤如下：
-1. 在当前用户的%APPDATA%/Local下克隆当前项目
-2. 根据用于自己的用户名改修init.vim中第3行，第4行，第243行的用户改自己的用户
-3. 参考下面hosts问题修改当前用户的hosts
-4. 终端下运行nvim，则会自动安装相关插件及配置
+依赖安装:
+- windows: ./depends/windows/
+- linux: ./depends/linux/
+
+- [x] Windows安装文档:./depends/windows/Install.md
+- [ ] Linux安装文档:./depends/linux/Install.md
+
 
 ## 0x03.hosts问题
 
